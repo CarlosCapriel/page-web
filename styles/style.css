@@ -15,7 +15,7 @@ a {
 }
 
 header {
-    background-image: url('/img/circuit.jpg');
+    background-image: url('img/circuit.jpg');
     height: 48vh;
     background-repeat: no-repeat;
     background-size: cover;
