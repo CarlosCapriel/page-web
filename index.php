@@ -18,7 +18,10 @@
   </head>
   <body class="grey darken-1">
     <div class="row">
-       
+    <?php include 'views/header.php'?>      
+        <main>
+         <?php include 'views/home.php' ?>       
+        </main>
     </div>
     <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
