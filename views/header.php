@@ -7,10 +7,10 @@
     <div class="nav-wrapper grey darken-4 col s12">
         <a href="">Logo</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">Sitio web</a></li>
-            <li><a href="views/about.html"> About</a></li>
-            <li><a href="views/login.html">Iniciar sesión</a></li>
-            <li><a href="views/registro.html"> Registrarme</a></li>
+            <li><a href="?menu=home">Sitio web</a></li>
+            <li><a href="?menu=about"> About</a></li>
+            <li><a href="?menu=login">Iniciar sesión</a></li>
+            <li><a href="?menu=register"> Registrarme</a></li>
         </ul>  
     </div> 
 </nav>
