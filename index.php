@@ -23,6 +23,7 @@
         <?php include 'controllers/routing.php' ?>       
       </main>
     </div>
+    <?php include 'views/footer.php' ?>
     <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
 </html>
