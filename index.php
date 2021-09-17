@@ -20,7 +20,7 @@
     <div class="row">
     <?php include 'views/header.php'?>      
       <main>
-        <?php include 'views/home.php' ?>       
+        <?php include 'controllers/routing.php' ?>       
       </main>
     </div>
     <script type="text/javascript" src="js/materialize.min.js"></script>
