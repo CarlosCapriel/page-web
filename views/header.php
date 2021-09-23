@@ -11,6 +11,7 @@
             <li><a href="?menu=about"> About</a></li>
             <li><a href="?menu=login">Iniciar sesión</a></li>
             <li><a href="?menu=register"> Registrarme</a></li>
+            <li><a href="?menu=alumnos">Alumnos</a></li>
         </ul>  
     </div> 
 </nav>
