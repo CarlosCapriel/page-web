@@ -30,5 +30,29 @@
             $mysqli->close();
             return $listaAlumnos;
         }
+        
+        public static function login($_user, $_password) {
+            $mysqli = conectadb::dbmysql();
+            $stmt = $mysqli->prepare('SELECT nombre, contrasenia FROM login WHERE nombre = ? and contrasenia = ?');
+            $stmt->bind_param('ss', $_user, $_password);
+            $stmt->execute();
+            $resultado = $stmt->get_result();
 
+            while ($filasql = mysqli_fetch_array($resultado)) {
+                // Imprimir por Arreglo Asociado
+                //echo $filasql['nombre'] . ' ';
+                //echo $filasql['contrasenia'] . ' ';
+                // initialize session variables
+                session_start();
+                // $_SESSION['loggedDataTime'] = datatime();
+                $_SESSION['loggedUserName'] = $filasql['nombre'] ;
+                
+                $acceso = false;
+                if ($stmt->affected_rows == 1) {
+                    $acceso = true;
+                }
+                $mysqli->close();
+                return $acceso;
+            }
+        }
     }

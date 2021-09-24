@@ -15,6 +15,9 @@
             $sqlAlumnos = alumnos::consultar();
             include_once './views/viewalumnos.php';
             break;
+        case "bienvenido":
+            require_once('./views/bienvenido.php');
+            break;
         default:
             require_once('./views/home.php');
     }
