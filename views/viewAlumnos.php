@@ -1,4 +1,7 @@
 <?php ?>
+<button class="btn waves-effect waves-light btn-large btn-floating green" type="submit" name="action">
+<a href="?menu=insertalumnoview"><i class="material-icons">add</i></a>
+</button>
 <table class="striped ">
     <thead class ="black white-text">
         <tr>
@@ -7,6 +10,7 @@
             <th>Nombre</th>
             <th>Sexo</th>
             <th>Genero</th>
+            <td>Acciones</td>
         </tr>
     </thead>
     <tbody>
@@ -24,8 +28,19 @@
             <?php } else {
             ?>
             <i class = "material-icons prefix red-text">female</i>
-            <?php }}
+            <?php }
             ?>
+        </td>
+        <td>
+           <button class="btn waves-effect waves-light red" type="submit" name="action">
+              <a href="?menu=deletealumno&idalumno=<?php echo $alumnoview->id; ?>"
+              <i class="material-icons right white-text">delete</i></a>
+           </button>                    
+           <button class="btn waves-effect waves-light" type="submit" name="action">
+               <a href="?menu=editalumno&idalumno=<?php echo $alumnoview->id; ?>">
+               <i class="material-icons right white-text">edit</i></a>
+           </button>
+           <?php }?>                    
         </td>
     </tbody>
 </table>

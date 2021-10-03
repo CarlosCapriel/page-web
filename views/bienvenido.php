@@ -1,6 +1,9 @@
 <?php
+$estado_session = session_status();
 // Devolver los valores de sesión
-session_start();
+if ($estado_session==PHP_SESSION_NONE) {
+    session_start();
+}
 if (isset($_SESSION['loggedUserName'])) {
 ?>
 <h3>Bienvenido | <?php echo $_SESSION["loggedUserName"]; ?></h3>

@@ -11,6 +11,7 @@
             $this->nombre = $nombre;
             $this->sexo = $sexo;
         }
+
         public static function consultar() {
             $mysqli = conectadb::dbmysql();
             $consulta = "select * from alumnos";
@@ -31,6 +32,16 @@
             return $listaAlumnos;
         }
         
+        public static function consultarAlumno($_idalumno) {
+            $mysqli = conectadb::dbmysql();
+            $stmt = $mysqli->prepare('SELECT * FROM alumnos WHERE id = ?');
+            $stmt->bind_param('i', $_idalumno);
+            $stmt->execute();
+            $resultado = $stmt->get_result();
+            $fila = $resultado->fetch_array();
+            return $fila;
+        }
+
         public static function login($_user, $_password) {
             $mysqli = conectadb::dbmysql();
             $stmt = $mysqli->prepare('SELECT nombre, contrasenia FROM login WHERE nombre = ? and contrasenia = ?');
@@ -54,5 +65,43 @@
                 $mysqli->close();
                 return $acceso;
             }
+        }
+
+        public static function delete($_idalumno)
+        {
+            $mysqli = conectadb::dbmysql();
+
+            $stmt = $mysqli->prepare('DELETE FROM alumnos WHERE id = ? ');
+            $stmt->bind_param('i', $_idalumno);
+            $stmt->execute();
+            $resultado = $stmt->get_result();
+        }
+        
+        public static function edit($_id, $_nombre, $_sexo) 
+        {
+            $mysqli = conectadb::dbmysql();
+            $stmt =$mysqli->prepare ('UPDATE alumnos SET nombre =?, sexo=? WHERE id =? ');
+            $stmt->bind_param("ssi",$_nombre,$_sexo,$_id);
+            $stmt -> execute();
+            $resultado = $stmt->get_result();
+            $acceso = false;
+            if ($stmt->affected_rows == 1) {
+                $acceso = true;
+            }
+            $mysqli->close();
+            return $acceso;
+        }
+
+        public static function insert($_matricula, $_nombre, $_sexo) {
+            $mysqli = conectadb::dbmysql();
+            $stmt = $mysqli->prepare('INSERT INTO alumnos(alumno, nombre, sexo) VALUE (?,?,?)');
+            $stmt->bind_param('sss', $_matricula, $_nombre, $_sexo);
+            $stmt->execute();
+            $acceso = false;
+            if ($stmt->affected_rows == 1) {
+                $acceso = true;
+            }
+            $mysqli->close();
+            return $acceso;
         }
     }
