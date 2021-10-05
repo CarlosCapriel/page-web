@@ -1,12 +1,10 @@
 <?php ?>
-<div class="row">
 <form action="../controllers/login.php" method="POST">
 
-<p>Usuario: <input type="text" name="nombre"></p>
+    <p>Usuario: <input type="text" name="nombre" placeholder="Usuario"></p>
 
-<p>Contraseña: <input type="password" name="contrasenia"></p>
+    <p>Contraseña: <input type="password" name="contrasenia" placeholder="Contraseña"></p>
 
-<p><button type="submit">Enviar formulario</button></p>
+    <p><button type="submit">Enviar formulario</button></p>
 
 </form>
-</div>

@@ -17,12 +17,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Carlos Capriel</title>
   </head>
-  <body class="grey darken-1">
     <div class="row">
-    <?php include 'views/header.php'?>      
+    <?php include 'views/header.php'?>
+    </div>
+    <div class="container">
+    <body class="grey darken-1">
+    <div class="row">      
       <main>
         <?php include 'controllers/routing.php' ?>       
       </main>
+    </div>
     </div>
     <?php include 'views/footer.php' ?>
     <script type="text/javascript" src="js/materialize.min.js"></script>

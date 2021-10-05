@@ -1,6 +1,5 @@
-<div class="container">
-  <div class="row">
-    <form class="grey darken-2 col s6">
+
+    <form class="grey darken-2 col s8">
       <div class="row">
         <div class="col s6">
           <label for="first_name col s12">Nombre</label>
@@ -37,10 +36,8 @@
           </label>
         </div>
         <div class="row">
-          <div class="col s10">
+          <button class="col s10">
             <a class="waves-effect waves-light btn">Aceptar</a>
-          </div>
+          </button>
        </div>
     </form>
-  </div>
-</div>

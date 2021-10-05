@@ -1,14 +1,13 @@
+<header class="">
+    <h1 class="title-blog">Remote brand sprint</h1>
+</header>
 <?php 
-
     $estado_session = session_status();
     if($estado_session == PHP_SESSION_NONE) {
         session_start();
     }
     if(isset($_SESSION['loggedUserName'])){
 ?>
-<header class="col s12 m12">
-    <h1 class="title-blog">Remote brand sprint</h1>
-</header>
 <nav class="row">
     <div class="nav-wrapper grey darken-4 col s12">
         <a href="">Logo</a>
@@ -23,9 +22,6 @@
 <?php 
     } else {
 ?>
-<header class="col s12 m12">
-    <h1 class="title-blog">Remote brand sprint</h1>
-</header>
 <nav class="row">
     <div class="nav-wrapper grey darken-2 col s12">
         <a href="">Logo</a>
